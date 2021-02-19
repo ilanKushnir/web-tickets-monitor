@@ -21,9 +21,9 @@
   <a href="#license">License</a>
 </p>
 
-
-<img align="center" src="https://i.imgur.com/RH6JWAB.png" alt="screenshot" width="500"/>
-
+<div align="center">
+    <img src="https://i.imgur.com/RH6JWAB.png" alt="screenshot" width="500"/>
+</div>
 
 ## Key Features
 
@@ -34,9 +34,9 @@
   - checking days selection
   - parent componenet level selection
 
-
-<img align="center" src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
-
+<div align="center">
+    <img src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
+</div>
 
 ## How To Use
 
