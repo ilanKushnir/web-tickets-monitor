@@ -44,43 +44,31 @@
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/ilanKushnir/web-tickets-monitor.git
+# Clone or Download this repository
+➜ git clone https://github.com/ilanKushnir/web-tickets-monitor.git
 
 # Go into the repository
-$ web-tickets-monitor
+➜ cd web-tickets-monitor
 
 # Install dependencies
-$ npm install
+➜ npm install
 
 # Edit settings.js file
+# - detailed in next section
 
 # Run the app
-$ npm start
+➜ npm start
 ```
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 ## Settings File
 
-+-----------------------------------+-------------------------------------------------------------------+
-| Variable                          | Meaning                                                           |
-+===================================+===================================================================+
-| Track data                        | | ``$ git add train.py``                                          |
-|                                   | | ``$ dvc add images.zip``                                        |
-+-----------------------------------+-------------------------------------------------------------------+
-| Connect code and data by commands | | ``$ dvc run -d images.zip -o images/ unzip -q images.zip``      |
-|                                   | | ``$ dvc run -d images/ -d train.py -o model.p python train.py`` |
-+-----------------------------------+-------------------------------------------------------------------+
-| Make changes and reproduce        | | ``$ vi train.py``                                               |
-|                                   | | ``$ dvc repro model.p.dvc``                                     |
-+-----------------------------------+-------------------------------------------------------------------+
-| Share code                        | | ``$ git add .``                                                 |
-|                                   | | ``$ git commit -m 'The baseline model'``                        |
-|                                   | | ``$ git push``                                                  |
-+-----------------------------------+-------------------------------------------------------------------+
-| Share data and ML models          | | ``$ dvc remote add myremote -d s3://mybucket/image_cnn``        |
-|                                   | | ``$ dvc push``                                                  |
-+-----------------------------------+-------------------------------------------------------------------+
+| Variable            | Description                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| URL                 | Tickets sale calendar full URL                               |
+| DAYS_TO_CHECK       | Days to check in calendar                                    |
+| ASSERTIONS_INTERVAL | The monitoring loop repeat time (milliseconds)               |
+| ASYNC_CALENDAR_PATH | XPath to async calendar component (leave blank if not needed)|
 
 ## Credits
 
