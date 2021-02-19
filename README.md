@@ -58,8 +58,29 @@ $ npm install
 # Run the app
 $ npm start
 ```
-
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+
+## Settings File
+
++-----------------------------------+-------------------------------------------------------------------+
+| Variable                          | Meaning                                                           |
++===================================+===================================================================+
+| Track data                        | | ``$ git add train.py``                                          |
+|                                   | | ``$ dvc add images.zip``                                        |
++-----------------------------------+-------------------------------------------------------------------+
+| Connect code and data by commands | | ``$ dvc run -d images.zip -o images/ unzip -q images.zip``      |
+|                                   | | ``$ dvc run -d images/ -d train.py -o model.p python train.py`` |
++-----------------------------------+-------------------------------------------------------------------+
+| Make changes and reproduce        | | ``$ vi train.py``                                               |
+|                                   | | ``$ dvc repro model.p.dvc``                                     |
++-----------------------------------+-------------------------------------------------------------------+
+| Share code                        | | ``$ git add .``                                                 |
+|                                   | | ``$ git commit -m 'The baseline model'``                        |
+|                                   | | ``$ git push``                                                  |
++-----------------------------------+-------------------------------------------------------------------+
+| Share data and ML models          | | ``$ dvc remote add myremote -d s3://mybucket/image_cnn``        |
+|                                   | | ``$ dvc push``                                                  |
++-----------------------------------+-------------------------------------------------------------------+
 
 ## Credits
 
