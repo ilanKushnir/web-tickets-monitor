@@ -2,9 +2,9 @@
   "name": "hermon-monitoring",
   "version": "1.0.0",
   "description": "GIVE ME MY TICKETSSSSS!",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/app.js",
     "test": "test"
   },
   "author": "Ilan Kushnir",
