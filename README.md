@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <img src="https://i.imgur.com/e43cGk2.png" alt="Markdownify" width="200">
@@ -23,16 +22,17 @@
 </p>
 
 <div align="center">
-    <img src="https://i.imgur.com/RH6JWAB.png" alt="screenshot" width="500"/>
+    <img src="https://i.imgur.com/7ydKsdD.png" alt="screenshot" width="500"/>
 </div>
 
 ## Key Features
 
-* Supports waiting for async component load by XPath
+* Mobile push notifications when change occurs
 * Sound alert when change occurs
-  - soon: email & mobile notifications
+* Automatically opening order page
+* Supports waiting for async component load by XPath
 * Custom settings:
-  - checking days selection
+  - days to monitor
   - parent componenet level selection
 
 <div align="center">
