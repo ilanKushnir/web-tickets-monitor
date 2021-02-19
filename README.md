@@ -66,10 +66,6 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 | ASSERTIONS_INTERVAL | The monitoring loop repeat time (milliseconds)               |
 | ASYNC_CALENDAR_PATH | XPath to async calendar component (leave blank if not needed)|
 
-<div align="center">
-    <img src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
-</div>
-
 ## Credits
 
 This software uses the following open source packages:
@@ -88,3 +84,7 @@ MIT
 ---
 
 > GitHub [@ilanKushnir](https://github.com/ilanKushnir/) &nbsp;&middot;&nbsp;
+
+<div align="center">
+    <img src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
+</div>
