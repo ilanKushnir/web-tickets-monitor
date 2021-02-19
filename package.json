@@ -1,0 +1,17 @@
+{
+  "name": "hermon-monitoring",
+  "version": "1.0.0",
+  "description": "GIVE ME MY TICKETSSSSS!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "author": "Ilan Kushnir",
+  "license": "ISC",
+  "dependencies": {
+    "play-sound": "^1.1.3",
+    "puppeteer": "^7.1.0",
+    "set-interval-async": "^1.0.34"
+  }
+}

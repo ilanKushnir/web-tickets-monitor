@@ -1,2 +1,2 @@
-# web-tickets-monitor
-Monitoring &amp; alerting web tickets sale (set to Hermon 🏂 tickets)
+# HermonTickets
+monitoring sale of hermon ski tikcets 🏂
