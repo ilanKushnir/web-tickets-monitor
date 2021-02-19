@@ -23,10 +23,10 @@ startMonitoring();
 async function startMonitoring() {
     await initPuppeteer();
     alertLog(`started monitoring`, '-');
-    infoLog(`started at: ${new Date()}`)
-    infoLog(`refresh rate: every ${ASSERTIONS_INTERVAL / 1000} seconds`)
-    infoLog(`url: ${URL}`)
-    infoLog('GOOD LUCK')
+    infoLog(`started at: ${new Date()}`, '🏁')
+    infoLog(`refresh rate: every ${ASSERTIONS_INTERVAL / 1000} seconds`, '🔄')
+    infoLog(`url: ${URL}`, '🌍')
+    infoLog('GOOD LUCK', '🙏')
 
     assertionsLoop = setIntervalAsync(async () => {
             await assertHermonTickets(URL);
@@ -39,12 +39,12 @@ async function assertHermonTickets(url) {
     console.log(`\n> assertions counter: ${counter++}\n`);
 
     await page.goto(url)
-    infoLog(`reached url: ${URL}`)
+    infoLog(`reached url: ${URL}`, '🖥')
 
     // wait for async calendar load
     if (ASYNC_CALENDAR_PATH != '') {
         await page.waitForXPath(ASYNC_CALENDAR_PATH)
-        infoLog('async calendar loaded')
+        infoLog('async calendar loaded', '📆')
     }
 
     // takeScreenshot(page)
@@ -115,11 +115,11 @@ function playSiren(interval = 10000) {
     }, interval)
 }
 
-function infoLog(str) {
-    console.log('•', str);
+function infoLog(str, char = '•') {
+    console.log(char,'-', str);
 }
 
 function takeScreenshot(page, name = 'screenshot', counter = '') {
     page.screenshot({path: `./screenshots/${name}${counter}.png`});
-    infoLog('took screenshot and saved')
+    infoLog('took screenshot and saved', '📸')
 }
