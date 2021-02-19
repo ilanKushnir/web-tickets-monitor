@@ -65,6 +65,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 This software uses the following open source packages:
 
+- [Open](https://github.com/sindresorhus/open)
 - [Node.js](https://nodejs.org/)
 - [Puppeteer](https://pptr.dev/)
 - [Play-Sound](https://github.com/shime/play-sound)

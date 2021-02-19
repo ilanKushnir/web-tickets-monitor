@@ -1,5 +1,6 @@
-const puppeteer = require('puppeteer');
+const open = require('open');
 const player = require('play-sound')(opts = {})
+const puppeteer = require('puppeteer');
 const {
     setIntervalAsync,
     clearIntervalAsync
@@ -7,20 +8,20 @@ const {
 
 const {
     URL,
+    DAYS_TO_CHECK,
     ASYNC_CALENDAR_PATH,
     ASSERTIONS_INTERVAL,
-    DAYS_TO_CHECK
 } = require('./settings')
 
-let browser;
 let page;
+let browser;
 let counter = 1;
 let assertionsLoop;
 
 startMonitoring();
 
 async function startMonitoring() {
-    await init(URL);
+    await initPuppeteer();
     alertLog(`started monitoring`, '-');
     infoLog(`started at: ${new Date()}`)
     infoLog(`refresh rate: every ${ASSERTIONS_INTERVAL / 1000} seconds`)
@@ -52,12 +53,12 @@ async function assertHermonTickets(url) {
         process.stdout.write(`    | - checking day: ${day}`);
         const dayParentElements = await getDayParentElements(day);
         const style = extractParentButtonStyles(dayParentElements);
-        finalCheck(style);
+        styleCheck(style);
     }
     console.log('    -------------------------')
 }
 
-async function init(url) {
+async function initPuppeteer() {
     alertLog('initializing puppeteer', '-')
     browser = await puppeteer.launch()
     infoLog('created puppeteer browser')
@@ -66,14 +67,19 @@ async function init(url) {
     takeScreenshot(page, 'init', counter)
 }
 
-function finalCheck(style = '') {
+function notifyAvailability() {
+    clearIntervalAsync(assertionsLoop);
+    console.log(' ✅ |');
+    alertLog(`TICKETS SALE! ⏱ ${new Date().toString()}`, '🏂');
+    playSiren(7000)
+    open(URL)
+}
+
+function styleCheck(style = '') {
     if (!style.includes('transparent')) {
-        console.log(' ✅ |');
-        clearIntervalAsync(assertionsLoop);
-        alertLog(`TICKETS SALE! ⏱ ${new Date().toString()}`, '🏂');
-        playSiren(7000)
+        notifyAvailability()
     } else {
-        console.log(' ❌ |');
+        console.log(' ❌ |')
     }
 }
 
