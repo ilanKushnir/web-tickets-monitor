@@ -108,7 +108,7 @@ ${alertChar.repeat(str.length + 10)}
 
 function playSiren(interval = 10000) {
     setInterval(() => {
-        player.play('./assets/sounds/siren.wav', function(err){
+        player.play('./assets/sounds/alert.mp3', function(err){
             if (err) throw err
         })
         alertLog('BUY NOW!', '🎫');
