@@ -22,7 +22,7 @@
 </p>
 
 
-<img src="https://i.imgur.com/RH6JWAB.png" alt="screenshot" width="500"/>
+<img align="center" src="https://i.imgur.com/RH6JWAB.png" alt="screenshot" width="500"/>
 
 
 ## Key Features
@@ -35,7 +35,7 @@
   - parent componenet level selection
 
 
-<img src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
+<img align="center" src="https://i.imgur.com/OTigp4d.png" alt="screenshot" width="500"/>
 
 
 ## How To Use
