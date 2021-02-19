@@ -71,7 +71,7 @@ function notifyAvailability() {
     clearIntervalAsync(assertionsLoop);
     console.log(' ✅ |');
     alertLog(`TICKETS SALE! ⏱ ${new Date().toString()}`, '🏂');
-    playSiren(7000)
+    playSiren()
     open(URL)
 }
 
@@ -106,7 +106,7 @@ ${alertChar.repeat(str.length + 10)}
     console.log(output);
 }
 
-function playSiren(interval = 10000) {
+function playSiren(interval = 13000) {
     setInterval(() => {
         player.play('./assets/sounds/alert.mp3', function(err){
             if (err) throw err
