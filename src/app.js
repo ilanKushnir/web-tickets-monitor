@@ -1,4 +1,5 @@
 const open = require('open');
+const axios = require('axios').default;
 const player = require('play-sound')(opts = {})
 const puppeteer = require('puppeteer');
 const {
@@ -8,6 +9,10 @@ const {
 
 const {
     URL,
+    APP_KEY,
+    PUSH_URL,
+    APP_SECRET,
+    PUSH_CONTENT,
     DAYS_TO_CHECK,
     ASYNC_CALENDAR_PATH,
     ASSERTIONS_INTERVAL,
@@ -72,7 +77,38 @@ function notifyAvailability() {
     console.log(' ✅ |');
     alertLog(`TICKETS SALE! ⏱ ${new Date().toString()}`, '🏂');
     playSiren()
+    sendPushNotification()
     open(URL)
+}
+
+async function sendPushNotification() {
+    if (APP_SECRET && APP_KEY && PUSH_CONTENT && PUSH_URL) {
+        var data = JSON.stringify({
+            "app_key": APP_KEY,
+            "app_secret": APP_SECRET,
+            "target_type": "app",
+            "content": PUSH_CONTENT
+        });
+
+        var config = {
+            method: 'post',
+            url: PUSH_URL,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            data : data
+        };
+
+        axios(config)
+            .then(function (response) {
+                infoLog('Push notification sent successfuly', '🔔')
+            })
+            .catch(function (error) {
+                infoLog('Failed to send push notification', '🚫')
+            });
+    } else {
+        infoLog('Missing push notifications settings', '🚫');
+    }
 }
 
 function styleCheck(style = '') {
@@ -111,7 +147,7 @@ function playSiren(interval = 13000) {
         player.play('./assets/sounds/alert.mp3', function(err){
             if (err) throw err
         })
-        alertLog('BUY NOW!', '🎫');
+        alertLog(`BUY NOW! at: ${URL}`, '🎫');
     }, interval)
 }
 

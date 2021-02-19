@@ -75,6 +75,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 This software uses the following open source packages:
 
 - [Open](https://github.com/sindresorhus/open)
+- [Axios](https://github.com/axios/axios)
 - [Node.js](https://nodejs.org/)
 - [Puppeteer](https://pptr.dev/)
 - [Play-Sound](https://github.com/shime/play-sound)
