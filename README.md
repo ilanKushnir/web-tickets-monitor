@@ -7,12 +7,13 @@
   <br>
 </h1>
 
-<h4 align="center">Web tickets sale monitoring tool</h4>
-<h5 align="center">set by default to hermon 🏂 tickets</h5>
+<div align="center">
+<h4>Web tickets sale monitoring tool</h4>
+<h5>set by default to hermon 🏂 tickets</h5>
 
   [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
   [![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()
-
+</div>
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
